@@ -1,5 +1,5 @@
 # Note: You can use any Debian/Ubuntu based image you want. 
-FROM node:20
+FROM node:22
 ARG USERNAME=node
 
 # Copy fix permission script
