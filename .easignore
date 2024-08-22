@@ -1,0 +1,3 @@
+# dont ignore some secret files
+!environment.js
+!app.json
