@@ -3,6 +3,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+      args:
+        - WORKSPACE_FOLDER=/mywallet
 
     volumes:
       # User home dir persist

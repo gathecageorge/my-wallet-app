@@ -1,9 +1,7 @@
 # Note: You can use any Debian/Ubuntu based image you want. 
 FROM node:22
 ARG USERNAME=node
-
-# Copy fix permission script
-COPY fix-ownership.sh /usr/local/share/fix-ownership.sh
+ARG WORKSPACE_FOLDER
 
 # Setup some tools and update
 RUN \
@@ -21,8 +19,9 @@ RUN \
     # Cleanup
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
-    # Fix ownership script
-    && sed -i "s/USERNAME/$USERNAME/g" /usr/local/share/fix-ownership.sh
+    # Create workspace directory
+    && mkdir -p $WORKSPACE_FOLDER \
+    && chown $USERNAME:$USERNAME $WORKSPACE_FOLDER
 
 # Use the user created
 USER $USERNAME
