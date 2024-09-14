@@ -4,7 +4,7 @@
 	"name": "Docker from Docker Compose",
 	"dockerComposeFile": "dev-docker-compose.yml",
 	"service": "mywallet",
-	"workspaceFolder": "/mywallet",
+	"workspaceFolder": "/workspaces/mywallet",
 
 	// Use this environment variable if you need to bind mount your local source code into a new container.
 	"remoteEnv": {
