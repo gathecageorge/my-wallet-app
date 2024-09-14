@@ -1,10 +1,10 @@
 services:
-  mywallet:
+  my-wallet-app:
     build: 
       context: .
       dockerfile: Dockerfile
       args:
-        - WORKSPACE_FOLDER=/workspaces/mywallet
+        - WORKSPACE_FOLDER=/workspaces/my-wallet-app
 
     volumes:
       # User home dir persist
@@ -13,7 +13,7 @@ services:
       # Forwards the local Docker socket to the container.
       - /var/run/docker.sock:/var/run/docker-host.sock
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ../:/workspaces/mywallet
+      - ../:/workspaces/my-wallet-app
 
     # Overrides default command so things don't shut down after the process ends.
     entrypoint: /usr/local/share/docker-init.sh
